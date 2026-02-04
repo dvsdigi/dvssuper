@@ -110,7 +110,7 @@ const Dashboard = () => {
     try {
       // Fetch Admins
       const adminResponse = await fetch(
-        `https://api.digitalvidyasaarthi.in/api/v1/superAdmin/getAdmins/${id}?page=0`
+        `https://dvsserver-d7fk.onrender.com/api/v1/superAdmin/getAdmins/${id}?page=0`,
       );
       const adminData = await adminResponse.json();
       if (adminData?.success) {
@@ -119,7 +119,7 @@ const Dashboard = () => {
 
       // Fetch Third-Party Users
       const thirdPartyResponse = await fetch(
-        `https://api.digitalvidyasaarthi.in/api/v1/superAdmin/thirdparty/${id}`
+        `https://dvsserver-d7fk.onrender.com/api/v1/superAdmin/thirdparty/${id}`,
       );
       const thirdPartyData = await thirdPartyResponse.json();
       if (thirdPartyData?.success) {
@@ -199,7 +199,7 @@ const Dashboard = () => {
   const fetchAlertStats = async () => {
     try {
       const response = await fetch(
-        `https://api.digitalvidyasaarthi.in/api/v1/alerts`
+        `https://dvsserver-d7fk.onrender.com/api/v1/alerts`,
       );
       const data = await response.json();
       if (data?.success) {
@@ -268,7 +268,7 @@ const Dashboard = () => {
   const handleSendMessage = () => {
     if (!messageEmail.trim() && !messagePhone.trim()) {
       alert(
-        "Please provide either an Email or Phone Number to send your message."
+        "Please provide either an Email or Phone Number to send your message.",
       );
       return;
     }
@@ -285,7 +285,7 @@ const Dashboard = () => {
       destination += `Phone: ${messagePhone.trim()}`;
     }
     alert(
-      `Sending message to ${destination}\n\nMessage:\n"${messageText.trim()}"`
+      `Sending message to ${destination}\n\nMessage:\n"${messageText.trim()}"`,
     );
     setMessageEmail("");
     setMessagePhone("");
@@ -391,8 +391,8 @@ const Dashboard = () => {
                   systemHealth.status === "healthy"
                     ? "bg-green-100 dark:bg-green-900/30"
                     : systemHealth.status === "warning"
-                    ? "bg-yellow-100 dark:bg-yellow-900/30"
-                    : "bg-red-100 dark:bg-red-900/30"
+                      ? "bg-yellow-100 dark:bg-yellow-900/30"
+                      : "bg-red-100 dark:bg-red-900/30"
                 }`}
               >
                 {systemHealth.status === "healthy" ? (
@@ -412,8 +412,8 @@ const Dashboard = () => {
                     systemHealth.status === "healthy"
                       ? "text-green-600 dark:text-green-400"
                       : systemHealth.status === "warning"
-                      ? "text-yellow-600 dark:text-yellow-400"
-                      : "text-red-600 dark:text-red-400"
+                        ? "text-yellow-600 dark:text-yellow-400"
+                        : "text-red-600 dark:text-red-400"
                   }`}
                 >
                   {systemHealth.uptime}
@@ -423,15 +423,15 @@ const Dashboard = () => {
                     systemHealth.status === "healthy"
                       ? "text-green-600 dark:text-green-400"
                       : systemHealth.status === "warning"
-                      ? "text-yellow-600 dark:text-yellow-400"
-                      : "text-red-600 dark:text-red-400"
+                        ? "text-yellow-600 dark:text-yellow-400"
+                        : "text-red-600 dark:text-red-400"
                   }`}
                 >
                   {systemHealth.status === "healthy"
                     ? "All systems operational"
                     : systemHealth.status === "warning"
-                    ? "Minor issues detected"
-                    : "Critical issues"}
+                      ? "Minor issues detected"
+                      : "Critical issues"}
                 </p>
               </div>
             </div>
@@ -491,8 +491,8 @@ const Dashboard = () => {
                         serverStats.cpu > 80
                           ? "bg-red-500"
                           : serverStats.cpu > 60
-                          ? "bg-yellow-500"
-                          : "bg-green-500"
+                            ? "bg-yellow-500"
+                            : "bg-green-500"
                       }`}
                       style={{ width: `${serverStats.cpu}%` }}
                     ></div>
@@ -509,8 +509,8 @@ const Dashboard = () => {
                         serverStats.memory > 80
                           ? "bg-red-500"
                           : serverStats.memory > 60
-                          ? "bg-yellow-500"
-                          : "bg-green-500"
+                            ? "bg-yellow-500"
+                            : "bg-green-500"
                       }`}
                       style={{ width: `${serverStats.memory}%` }}
                     ></div>
@@ -527,8 +527,8 @@ const Dashboard = () => {
                         serverStats.disk > 80
                           ? "bg-red-500"
                           : serverStats.disk > 60
-                          ? "bg-yellow-500"
-                          : "bg-green-500"
+                            ? "bg-yellow-500"
+                            : "bg-green-500"
                       }`}
                       style={{ width: `${serverStats.disk}%` }}
                     ></div>
@@ -554,8 +554,8 @@ const Dashboard = () => {
                         activity.type === "success"
                           ? "bg-green-100 dark:bg-green-900/30"
                           : activity.type === "warning"
-                          ? "bg-yellow-100 dark:bg-yellow-900/30"
-                          : "bg-blue-100 dark:bg-blue-900/30"
+                            ? "bg-yellow-100 dark:bg-yellow-900/30"
+                            : "bg-blue-100 dark:bg-blue-900/30"
                       }`}
                     >
                       {activity.type === "success" ? (

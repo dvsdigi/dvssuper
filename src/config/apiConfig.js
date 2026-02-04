@@ -15,8 +15,8 @@ const API_BASE_URLS = {
     API_URL: 'http://localhost:4000/api/v1'
   },
   PROD: {
-    BASE_URL: 'https://api.digitalvidyasaarthi.in',
-    API_URL: 'https://api.digitalvidyasaarthi.in/api/v1'
+    BASE_URL: 'https://dvsserver-d7fk.onrender.com',
+    API_URL: 'https://dvsserver-d7fk.onrender.com/api/v1'
   }
 };
 
